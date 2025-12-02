@@ -1,0 +1,30 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Cachés de Python
+__pycache__/
+*.pyc
+
+# Builds / ejecutables / empaquetados
+dist/
+build/
+*.exe
+*.zip
+*.pkg
+
+# Modelos grandes
+*.pt
+*.pth
+*.onnx
+*.h5
+*.ckpt
+
+# Imágenes pesadas de historial (si no quieres versionarlas)
+historia/
+
+# PDFs de reportes grandes (opcional, si quieres excluirlos también)
+diagnosticos_guardados/
+
+# VS Code
+.vscode/
