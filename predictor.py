@@ -46,14 +46,11 @@ class ImageClassifier:
         # Se llama 'classifier' y es una sola capa nn.Linear
         num_ftrs = self.model.classifier.in_features
 
-        if model_path == "./models/densenet_201_fold4.pth":
-            # Replicamos la estructura que el archivo .pth SÍ tiene:
-            self.model.classifier = nn.Sequential(
-                nn.Dropout(p=0.4, inplace=True),  # Asumimos un Dropout, ya que es común
-                nn.Linear(num_ftrs, num_classes)  # Esta es la capa [1]
-            )
-        else:
-            self.model.classifier = nn.Linear(num_ftrs, num_classes)
+        # Siempre usamos la arquitectura correcta para TU modelo entrenado
+        self.model.classifier = nn.Sequential(
+            nn.Dropout(p=0.4, inplace=True),
+            nn.Linear(num_ftrs, num_classes)
+        )
 
         # --- 4. Cargar los pesos entrenados (.pth) ---
         try:
